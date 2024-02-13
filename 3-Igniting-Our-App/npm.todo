@@ -1,0 +1,63 @@
+npm stands for Node Package Manager, but it's really just a package manager for anything you can run with node.js
+npm - node package manager it is not actually node package manager
+
+why do we used npm ?
+we want lot's of packages in our project.
+
+we want to mnages lot's of packages so that's why we need lots of packages. 
+we need superpower and it comes from the packages.
+
+
+step 1: npm init -y    -- > It gives Package.json
+step 2: npm install     --> to install the package         or 
+step 2: npm install -D parcel    --> D for Developer(Dev Dependancy) because we are not used in production level
+Dev Dependancy : All the packages that are project needs
+
+package.json vs package-lock.json
+
+-->package-lock.json it is very important file it locks the version 
+
+
+What is NodeModule ? 
+it is like database for our npm.
+
+
+step 3: npm install react (in global)
+step 4: npm install i react-dom
+
+
+to ignite our App
+
+step 5: npx parcel index.html --> Execute parcel with entry point (App.js)
+create development build for us and hosted on server
+  Built in 13.43s -- It created Dev Build And  Caching and so on.
+ 
+//why the program save automatically ?
+because of parcel  bundler
+      ↓
+      ↓
+HMR - Hot Module Replacement 
+Parcel keep a track of all changes 
+File Watcher algo. - written in c++
+Bundling 
+Minified - Minification is the process of removing unnecessary characters, such as white space and comments, from your code to reduce its size and improve its performance.
+Cleaning our Code
+Dev and production Build
+Super Fast Build Algorithms
+Image Optimization (Because time Required for media,image loading)
+Caching while Developement
+compatable with older version of browser
+we can just build our app on HTTP(We can upgrade into HTTPS)
+npx parcel index.html --https
+Parcel manage port number for development build ad Production build
+Parcel is Zero  Config bundler
+
+
+Transitive Dependancy
+A -> B -> C
+When we import A which has dependency on B ,and B also have dependency on C then Par        
+cel will take care of it .It will add C to our project without telling us.
+
+
+Home Work
+Script ypes in Html ?
