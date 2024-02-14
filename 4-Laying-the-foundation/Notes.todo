@@ -1,0 +1,29 @@
+Polyfill
+
+Suppose:  Arrays.map(); // Cant not determine the Browser
+We can create our own map function but both the output are same.
+
+What convert our newer code to older code. -- > Bibble
+
+Parcel == Vite (same)
+
+**Babel**
+we can configure our project 
+parcel will remove the console.log in the project ->> Babel Plugin Transform Remove Control
+
+npm install babel-plugin-transform-remove-console --save-d
+
+
+in html
+
+<div class="pratik">
+    <h2>Hello 01</h2>
+    <h2>Hello 02</h2>
+</div>
+
+If we Have multiple keys then we will give the keys.
+
+React track this thing as a unique thing.
+
+what is Render ?
+Updating something in DOM
