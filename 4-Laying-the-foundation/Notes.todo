@@ -27,3 +27,63 @@ React track this thing as a unique thing.
 
 what is Render ?
 Updating something in DOM
+
+
+ is jsx html inside Javascript :  true or false
+ false --> html like syntax but not HTML inside Javascript
+
+const heading1 =(
+     <h1 id="title" key="h2">
+        Namste React
+        </h1>
+)
+
+keys ? --> React Track the uniqueness using keys 
+
+How Does the Work in Browser ?
+
+
+
+// JSX  - JavaScript XML 
+// Facebook Developer Develop JSX.
+Bebel is JS Library.
+Babel understand the JSX Code What is '<' Brackets.
+
+JSX --> React.createElement --> Object --> HTML(DOM)
+    ⬆ 
+  Babel - Converting the JSX code into React.createElement
+
+  Advanages of jsx :
+  Radability
+  Simplicity  
+
+  ------------------------
+  Bebel along with parcel that's Bebel is not present in package.json
+
+
+
+  React Component
+  Two Types of Component 
+  -Functional Based Component --> NEW --> We Will Used this
+  -Class Based Component --> OLD  
+
+1 )  Functional Base Component 
+Name starts with the capital letters
+
+if we want to write code in multiple line then we can Add curly braces {}
+
+Just Write your logic inside the curly braces {}
+
+const HeaderComponent = () => {
+    return{
+        <div><h1>Hello Pratik(Functional component)</h1></div>
+
+    } 
+ };
+
+ What is React Element ?
+ It is an Object
+
+ Functional ---- >  <Title/> || {Title()} -- > Component Composition
+ variable ----> {Title}  --> important
+
