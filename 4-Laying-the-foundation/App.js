@@ -1,42 +1,50 @@
 import React from "react";  // getting it from node modules
 import ReactDOM from "react-dom/client";
+ /**
+          Header 
+             -Logo
+             - Nav Items (Right Side)
+             -cart
+          Body
+              -Search Bar
+              -RestrorentCard
+              -Image
+              -Rating
+              -Tags(cusines)
 
+          Description
+            -links
+            -Copyrights
+           **/
 
-// this is Actual React Code 
-// const heading = React.createElement(
-//     "h1",
-//     {
-//         id: "title",
-//         key:"h2",     
-//     },
-//     "React is working"
-// );
-
-
-// JSX  - JavaScript XML 
-// Facebook Developer Develop JSX
-const heading1 =(
+const Title = () => (
      <h1 id="title" key="h2">
-        Namste React
+        Food Villa
         </h1>
-)
+);
 
-//React Component
-// Functional Component -- New
-//  ---> Nothing but the Javascript Function. (Normal Function)
- const HeaderComponent = () => {
-       return( 
-       <div>
-         {heading1}
-         {/* We can do mathematical Operation in that just link Console */}
-         {2+1}  
-         <h1>Hello Pratik</h1>
-         <h2>Ram</h2>
-         </div>
-)
+//composing Components
+const HeaderComponent = () => {
+  return (
+    <div className="header">
+    <Title />
+    <div className="nav-items">
+      <ul>
+        <li>Home</li>
+        <li>Aout</li>
+        <li>Contact</li>
+        <li>Cart</li>
+      </ul>
+    </div>
+    </div>
+  );
+};
+
+ const AppLayout = () => {
+       return {};
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(heading1);
-root.render(<HeaderComponent />);
+root.render(<AppLayout />);
 
