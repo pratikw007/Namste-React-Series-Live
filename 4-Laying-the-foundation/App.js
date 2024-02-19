@@ -1,8 +1,12 @@
-import React from "react";  // getting it from node modules
+import React from "react"; // getting it from node modules
 import ReactDOM from "react-dom/client";
-import logo from './logo.png'; // Tell webpack this JS file uses this image
+import logo from "./logo.png"; // Tell webpack this JS file uses this image
 
- /**
+
+
+// res --- Restrarent
+
+/**
           Header 
              -Logo
              - Nav Items (Right Side)
@@ -21,34 +25,29 @@ import logo from './logo.png'; // Tell webpack this JS file uses this image
 
 const Title = () => (
   <a href="/">
-      <img 
-      className="logo" 
-      src={logo} 
-      alt="logo" 
-      />
-      </a>
-        
+    <img className="logo" src={logo} alt="logo" />
+  </a>
 );
 
 //composing Components
 const Header = () => {
   return (
     <div className="header">
-    <Title />
-    <div className="nav-items">
-      <ul>
-        <li>Home</li>
-        <li>Aout</li>
-        <li>Contact</li>
-        <li>Cart</li>
-      </ul>
-    </div>
+      <Title />
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>Aout</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
   );
 };
- // Javascript Object (Like API)
+// Javascript Object (Like API)
 
- const restaurantList = [
+const restaurantList = [
   {
     type: "restaurant",
     data: {
@@ -1868,56 +1867,64 @@ const Header = () => {
 
 // this is our functional Component Resrtaunt
 //This is known as  Config Driven UI
-const RestrauntCard = (props) =>{
-  console.log(props);
-            return (
-              <div className="card">
-                <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-               +restaurantList[1].data?.cloudinaryImageId
-              }
-              />
-                <h2>{restaurantList[0].data?.name}</h2>
-                <h3>{restaurantList[0].data?.cuisines}</h3> 
-                <h4>{restaurantList[0].data.lastMileTravelString} Minutes</h4>
-              </div>
-            )
-}
 
+const RestrauntCard = ({
+  name,
+  cuisines,
+  cloudinaryImageId,
+  lastMileTravelString,
+}) => {
+  //  {restaurant} --> Destructuraing
+  return (
+    <div className="card">
+      <img
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
+      />
+      <h2>{name}</h2>
+      <h3>{cuisines.join(",")}</h3>
+      <h4>{lastMileTravelString} minutes</h4>
+    </div>
+  );
+};
 
 //props --> Properties -->Passing some data into component
 const Body = () => {
   return (
     <div className="restraunt-list">
-    <RestrauntCard restaurant ={restaurantList[0]}/>
-    <RestrauntCard restaurant ={restaurantList[1]}/>
-    <RestrauntCard restaurant ={restaurantList[2]}/>
-    <RestrauntCard restaurant ={restaurantList[3]}/>
-    <RestrauntCard restaurant ={restaurantList[4]}/>
-    <RestrauntCard restaurant ={restaurantList[5]}/>
-    <RestrauntCard restaurant ={restaurantList[6]}/>
-    <RestrauntCard restaurant ={restaurantList[7]}/>
-    <RestrauntCard restaurant ={restaurantList[8]}/>
-    <RestrauntCard restaurant ={restaurantList[9]}/>
+       {
+        restaurantList.map((res) => {
+          return  <RestrauntCard {...res.data}  key={res.data.id}/>;
+        })
+       }
+
+      {/* <RestrauntCard {...restaurantList[0].data} />
+      <RestrauntCard {...restaurantList[1].data} />
+      <RestrauntCard {...restaurantList[2].data} />
+      <RestrauntCard {...restaurantList[3].data} />
+      <RestrauntCard {...restaurantList[3].data} />
+      <RestrauntCard {...restaurantList[3].data} />
+      <RestrauntCard {...restaurantList[3].data} /> */}
     </div>
-) 
-}
+  );
+};
 
 const Footer = () => {
-  return <h4>Footer</h4>
-}
+  return <h4>Footer</h4>;
+};
 
- const AppLayout = () => {
-       return (
-      <>
-        <Header/> 
-        <Body />
-        <Footer />
-        </>
-        
-       );
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<HeaderComponent />);
 root.render(<AppLayout />);
-
