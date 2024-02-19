@@ -212,4 +212,20 @@ Virtual Dom is not a Dom it is a Representation of DOM.
 Reconciliation In React:
 -->It will Only rerender the specific portion of the  app that has changed instead of re-rendering the whole application.
 
+1>React is Representation of Virtual DOM.
+2>React uses  something Known as Reconciliation.
+3>It is  a Process Where We have divv Algorithms || Diff Algo. Wich find the Different Between the trees.
+4>It will Rerender Only the Portion Which is required.
 
+So That's Why We will add the key in Map.
+
+[In map there is so many div  and we don't want to rerender all so we will add key] 
+
+noo key(not Acceptable) <<<<<< index key(ok way)  <<< Unique key(Best Practice)
+
+
+
+Asssignment :  19/02/2024
+
+1>What is React Fibre ?(new Reconciliation Engine in react 16)
+2>Why we Don't used indexx as a key ?
