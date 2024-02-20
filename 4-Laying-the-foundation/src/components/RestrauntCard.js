@@ -1,4 +1,4 @@
-import { IMG_CDN_URl } from "./components/config.js";
+import { IMG_CDN_URl } from "./config";
 
 const RestrauntCard = ({
     name,

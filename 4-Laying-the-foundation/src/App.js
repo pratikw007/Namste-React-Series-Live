@@ -1,7 +1,7 @@
 import React from "react"; // getting it from node modules
 import ReactDOM from "react-dom/client";
 // Default import
-// import Header from "./components/Header"
+import Header from "./components/Header"
 // Name Import
 // import {Title} from "./components/Header.js";
 import Body from "./components/Body.js";
@@ -30,8 +30,16 @@ import Footer from "./components/Footer.js";
 // this is our functional Component Resrtaunt
 //This is known as  Config Driven UI
 
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
+};
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<HeaderComponent />);
 root.render(<AppLayout />);
