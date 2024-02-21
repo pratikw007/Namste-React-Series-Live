@@ -15,9 +15,11 @@ import { useState } from 'react';
 const Body = () => {
   // create a variable in JS
   // const searchTxt = "KFC";
-  
+  // const searchClick = false;
+const [restaurants,setRestaurants] = useState(restaurantList);
+
   // create a variable in React
-   const [searchInput,setSearchText] = useState("Search"); // to create state variable   
+   const [searchInput,setSearchText] = useState("Search"); // to create state variable--> return the array of element
     return (
       <>
       <div className="-search-container">
@@ -31,9 +33,14 @@ const Body = () => {
         setSearchText(e.target.value);
        }}
        />
-       <h1>{searchInput}</h1>
 
-       <button className='search-btn'>Search</button>
+
+       <button className='search-btn'
+       onClick={() =>{ 
+        // Need to filter the data (Restralist data)
+        // filterData();
+       }}
+       >Search</button>
       </div>
 
       <div className="restraunt-list">
